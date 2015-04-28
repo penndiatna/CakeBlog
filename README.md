@@ -27,6 +27,7 @@ CakeBlog is an open source blogging software. Written by George Whitcher in PHP 
 * Download the latest version of [CakeBlog](https://github.com/gwhitcher/CakeBlog).
 * Upload CakePHP and then upload CakeBlog.  Overwritting any necessary files when copying CakeBlog.
 * Setup database and user (with all privileges) on server and put that information in the config located in /config/database.php.
+* Import cakeblog.sql into created database.
 * Configure settings in /config/cakeblog_config.php.
 * Make the logs and tmp directories writable (CHMOD 777).
 * Make the /webroot/img/articles/ directory and it's subdirectories writable (CHMOD 777).
