@@ -20,7 +20,7 @@
 		<td><?php echo $article->title; ?>&nbsp;</td>
 		<td><?php echo $article->category_id; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('action' => 'article_edit', $article->id)); ?>
+		<?php echo $this->Html->link('Edit', array('action' => 'article_edit', $article->id)); ?>&nbsp;
 		<?php echo $this->Form->postLink('Delete', array('action' => 'article_delete', $article->id), array('confirm'=>'Are you sure you want to delete that article?')); ?>
 		</td>
 	</tr>

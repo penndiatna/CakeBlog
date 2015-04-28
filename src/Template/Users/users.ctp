@@ -16,9 +16,9 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $user->id; ?></td>
-		<td><?php echo $user->username; ?>&nbsp;</td>
+		<td><?php echo $user->username; ?></td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('action' => 'user_edit', $user->id)); ?>
+		<?php echo $this->Html->link('Edit', array('action' => 'user_edit', $user->id)); ?>&nbsp;
 		<?php echo $this->Form->postLink('Delete', array('action' => 'user_delete', $user->id), array('confirm'=>'Are you sure you want to delete that article?')); ?>
 		</td>
 	</tr>

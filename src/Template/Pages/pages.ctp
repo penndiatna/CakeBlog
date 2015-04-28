@@ -18,7 +18,7 @@
 		<td><?php echo $page->id; ?></td>
 		<td><?php echo $page->title; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('action' => 'page_edit', $page->id)); ?>
+		<?php echo $this->Html->link('Edit', array('action' => 'page_edit', $page->id)); ?>&nbsp;
 		<?php echo $this->Form->postLink('Delete', array('action' => 'page_delete', $page->id), array('confirm'=>'Are you sure you want to delete that page?')); ?>
 		</td>
 	</tr>

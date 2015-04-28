@@ -27,7 +27,7 @@ $class = null;
 &nbsp;
 </div>
 <div id="column" class="center">
-<?php echo $this->Html->link('Edit', array('action' => 'sidebar_edit', $sidebar->id)); ?>
+<?php echo $this->Html->link('Edit', array('action' => 'sidebar_edit', $sidebar->id)); ?>&nbsp;
 <?php echo $this->Form->postLink('Delete', array('action' => 'sidebar_delete', $sidebar->id), array('confirm'=>'Are you sure you want to delete that sidebar?')); ?>
 </div>
 </li>

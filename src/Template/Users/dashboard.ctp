@@ -21,8 +21,8 @@
 		<td align="center"><?php echo $article->id; ?></td>
 		<td align="center"><?php echo $article->title; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('controller' => 'articles', 'action' => 'article_edit', $article->id)); ?>
-		<?php echo $this->Form->postLink('Delete', array('controller' => 'articles', 'action' => 'article_delete', $article->id), array('confirm'=>'Are you sure you want to delete that article?')); ?>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/articles/edit/<?php echo $article->id; ?>">Edit</a>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/articles/delete/<?php echo $article->id; ?>">Delete</a>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -50,8 +50,8 @@
 		<td align="center"><?php echo $category->id; ?></td>
 		<td align="center"><?php echo $category->title; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('controller' => 'categories', 'action' => 'category_edit', $category->id)); ?>
-		<?php echo $this->Form->postLink('Delete', array('controller' => 'categories', 'action' => 'category_delete', $category->id), array('confirm'=>'Are you sure you want to delete that category?')); ?>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/categories/edit/<?php echo $category->id; ?>">Edit</a>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/categories/delete/<?php echo $category->id; ?>">Delete</a>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -79,8 +79,8 @@
 		<td align="center"><?php echo $page->id; ?></td>
 		<td align="center"><?php echo $page->title; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('controller' => 'pages', 'action' => 'page_edit', $page->id)); ?>
-		<?php echo $this->Form->postLink('Delete', array('controller' => 'pages', 'action' => 'page_delete', $page->id), array('confirm'=>'Are you sure you want to delete that page?')); ?>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/pages/edit/<?php echo $page->id; ?>">Edit</a>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/pages/delete/<?php echo $page->id; ?>">Delete</a>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -108,8 +108,8 @@
 		<td align="center"><?php echo $sidebar->id; ?></td>
 		<td align="center"><?php echo $sidebar->title; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('controller' => 'sidebar', 'action' => 'sidebar_edit', $sidebar->id)); ?>
-		<?php echo $this->Form->postLink('Delete', array('controller' => 'sidebar', 'action' => 'sidebar_delete', $sidebar->id), array('confirm'=>'Are you sure you want to delete that sidebar?')); ?>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/sidebar/edit/<?php echo $sidebar->id; ?>">Edit</a>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/sidebar/delete/<?php echo $sidebar->id; ?>">Delete</a>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -137,8 +137,8 @@
 		<td align="center"><?php echo $navigation_item->id; ?></td>
 		<td align="center"><?php echo $navigation_item->title; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('controller' => 'navigation', 'action' => 'navigation_edit', $navigation_item->id)); ?>
-		<?php echo $this->Form->postLink('Delete', array('controller' => 'navigation', 'action' => 'navigation_delete', $navigation_item->id), array('confirm'=>'Are you sure you want to delete that navigation item?')); ?>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/navigation/edit/<?php echo $navigation_item->id; ?>">Edit</a>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/navigation/delete/<?php echo $navigation_item->id; ?>">Delete</a>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -164,10 +164,10 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td align="center"><?php echo $user->id; ?></td>
-		<td align="center"><?php echo $user->usesrname; ?>&nbsp;</td>
+		<td align="center"><?php echo $user->username; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('controller' => 'users', 'action' => 'user_edit', $user->id)); ?>
-		<?php echo $this->Form->postLink('Delete', array('controller' => 'users', 'action' => 'user_delete', $user->id), array('confirm'=>'Are you sure you want to delete that article?')); ?>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/users/edit/<?php echo $user->id; ?>">Edit</a>
+            <a href="<?php echo Configure::read('BASE_URL');?>/admin/users/delete/<?php echo $user->id; ?>">Delete</a>
 		</td>
 	</tr>
 <?php endforeach; ?>

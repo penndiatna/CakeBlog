@@ -27,7 +27,7 @@ $class = null;
 <?php echo $navigation_item->url; ?>
 </div>
 <div id="column" class="center">
-<?php echo $this->Html->link('Edit', array('action' => 'navigation_edit', $navigation_item->id)); ?>
+<?php echo $this->Html->link('Edit', array('action' => 'navigation_edit', $navigation_item->id)); ?>&nbsp;
 <?php echo $this->Form->postLink('Delete', array('action' => 'navigation_delete', $navigation_item->id), array('confirm'=>'Are you sure you want to delete that navigation item?')); ?>
 </div>
 </li>

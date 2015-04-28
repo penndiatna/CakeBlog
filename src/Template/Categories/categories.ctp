@@ -18,7 +18,7 @@
 		<td><?php echo $category->id; ?></td>
 		<td><?php echo $category->title; ?>&nbsp;</td>
 		<td align="center" class="actions">
-		<?php echo $this->Html->link('Edit', array('action' => 'category_edit', $category->id)); ?>
+		<?php echo $this->Html->link('Edit', array('action' => 'category_edit', $category->id)); ?>&nbsp;
 		<?php echo $this->Form->postLink('Delete', array('action' => 'category_delete', $category->id), array('confirm'=>'Are you sure you want to delete that category?')); ?>
 		</td>
 	</tr>
