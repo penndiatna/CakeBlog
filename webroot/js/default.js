@@ -1,7 +1,12 @@
 //FLASH MESSAGE DISSAPEAR
 jQuery(function(){
-  setTimeout(function() {
-    $('#flashMessage').hide();}, 6000); 
+    setTimeout(function() {
+        $('.message.error').hide();}, 6000);
+});
+
+jQuery(function(){
+    setTimeout(function() {
+        $('.message.success').hide();}, 6000);
 });
 
 //prettyPhoto

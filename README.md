@@ -16,6 +16,7 @@ CakeBlog is an open source blogging software. Written by George Whitcher in PHP 
 * Configure settings in /config/cakeblog_config.php.
 * Open git bash and run "php composer.phar install".
 * Now run the command "cake Migrations migrate".
+* Make the /webroot/img/articles/ directory and it's subdirectories writable (CHMOD 777).
 * Login to admin by visiting DOMAIN.COM/admin.
 * Default username and password is admin:admin.
 * Enjoy!
@@ -28,6 +29,7 @@ CakeBlog is an open source blogging software. Written by George Whitcher in PHP 
 * Setup database and user (with all privileges) on server and put that information in the config located in /config/database.php.
 * Configure settings in /config/cakeblog_config.php.
 * Make the logs and tmp directories writable (CHMOD 777).
+* Make the /webroot/img/articles/ directory and it's subdirectories writable (CHMOD 777).
 * Login to admin by visiting DOMAIN.COM/admin.
 * Default username and password is admin:admin.
 * Enjoy!

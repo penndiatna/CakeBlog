@@ -84,7 +84,7 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
-                return $this->redirect(['action' => 'users']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/users");
             }
             $this->Flash->error(__('Unable to add the user.'));
         }
@@ -105,7 +105,7 @@ class UsersController extends AppController
             $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been updated.'));
-                return $this->redirect(['action' => 'users']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/users");
             }
             $this->Flash->error(__('Unable to update the user.'));
         }
@@ -117,7 +117,7 @@ class UsersController extends AppController
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
             $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
-            return $this->redirect(['action' => 'users']);
+            return $this->redirect("".Configure::read('BASE_URL')."/admin/users");
         }
     }
 

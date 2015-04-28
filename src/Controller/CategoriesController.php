@@ -41,7 +41,7 @@ class CategoriesController extends AppController {
             $category->slug = strtolower(Inflector::slug($category->title));
             if ($this->Category->save($category)) {
                 $this->Flash->success(__('The category has been saved.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/categories");
             }
             $this->Flash->error(__('Unable to add category.'));
         }
@@ -62,7 +62,7 @@ class CategoriesController extends AppController {
             $category->slug = strtolower(Inflector::slug($category->title));
             if ($this->Category->save($category)) {
                 $this->Flash->success(__('The category has been updated.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/categories");
             }
             $this->Flash->error(__('Unable to edit category.'));
         }
@@ -74,7 +74,7 @@ class CategoriesController extends AppController {
         $category = $this->Category->get($id);
         if ($this->Category->delete($category)) {
             $this->Flash->success(__('The category with id: {0} has been deleted.', h($id)));
-            return $this->redirect(['action' => 'admin']);
+            return $this->redirect("".Configure::read('BASE_URL')."/admin/categories");
         }
     }
 	

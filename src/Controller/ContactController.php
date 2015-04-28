@@ -42,7 +42,7 @@ class ContactController extends AppController {
 
     /* LOAD CAPTCHA IMAGE */
     public function captcha_image(){
-        require_once(APP.'../vendor'.DS.'captcha'.DS.'captcha.php');
+        require_once('../plugins'.DS.'captcha'.DS.'captcha.php');
         show_captcha();
     }
 	

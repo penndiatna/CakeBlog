@@ -23,24 +23,35 @@ h1,h2,h3,h4,h5,h6 {
 	padding: 0px;	
 }
 
-/* FLASH MESSAGE */
-#flashMessage {
-	max-width: 35%;
-	margin: 0 auto;
-	border: 1px solid #FFF;
-	background: #fdc800;
-	border-radius: 15px;
-	font-weight: bold;
-	font-size: 12px;
-	text-align: center;
-	padding: 10px;
-	color: #000;
-	font-style: italic;
-	text-transform: uppercase;
+/* ERROR MESSAGE */
+.message.error {
+    max-width: 35%;
+    margin: 10px auto 10px auto;
+    border: 1px solid #FFF;
+    background: #600;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    font-style: italic;
+    text-transform: uppercase;
 }
 
-.error-message {
-	color: #F00;	
+.message.success {
+    max-width: 35%;
+    margin: 10px auto 10px auto;
+    border: 1px solid #FFF;
+    background: #8bc34a;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    color: #000;
+    font-style: italic;
+    text-transform: uppercase;
 }
 
 /* FORMATTING */

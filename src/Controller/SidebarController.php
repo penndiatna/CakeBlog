@@ -36,7 +36,7 @@ class SidebarController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Sidebar->save($sidebar)) {
                 $this->Flash->success(__('The sidebar item has been saved.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/sidebars");
             }
             $this->Flash->error(__('Unable to add sidebar item.'));
         }
@@ -56,7 +56,7 @@ class SidebarController extends AppController {
             $this->Sidebar->patchEntity($sidebar, $this->request->data);
             if ($this->Sidebar->save($sidebar)) {
                 $this->Flash->success(__('The sidebar item has been updated.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/sidebars");
             }
             $this->Flash->error(__('Unable to edit sidebar item.'));
         }
@@ -69,7 +69,7 @@ class SidebarController extends AppController {
         $sidebar = $this->Sidebar->get($id);
         if ($this->Sidebar->delete($sidebar)) {
             $this->Flash->success(__('The sidebar with id: {0} has been deleted.', h($id)));
-            return $this->redirect(['action' => 'admin']);
+            return $this->redirect("".Configure::read('BASE_URL')."/admin/sidebars");
         }
     }
 	

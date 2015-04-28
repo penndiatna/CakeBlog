@@ -47,15 +47,15 @@ class ArticlesController extends AppController {
         $article = $this->Article->newEntity($this->request->data);
         if ($this->request->is('post')) {
             $article->slug = strtolower(Inflector::slug($article->title));
-            if(!empty($this->request->data['image']['name']))
+            if(!empty($this->request->data['featured']['name']))
             {
                 $file = $this->request->data['featured'];
                 move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/articles/featured/' . $file['name']);
-                $this->request->data['featured'] = $file['name'];
+                $article->featured = $file['name'];
             }
             if ($this->Article->save($article)) {
                 $this->Flash->success(__('The article has been saved.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/articles");
             }
             $this->Flash->error(__('Unable to add article.'));
         }
@@ -79,17 +79,17 @@ class ArticlesController extends AppController {
         if ($this->request->is(['post', 'put'])) {
             $this->Article->patchEntity($article, $this->request->data);
             $article->slug = strtolower(Inflector::slug($article->title));
-            if(!empty($this->request->data['image']['name']))
+            if(!empty($this->request->data['featured']['name']))
             {
                 $file = $this->request->data['featured'];
                 move_uploaded_file($file['tmp_name'], WWW_ROOT . 'img/articles/featured/' . $file['name']);
-                $this->request->data['featured'] = $file['name'];
+                $article->featured = $file['name'];
             } else {
-                $this->request->data['featured'] = $article->featured;
+                $article->featured = $article->featured;
             }
             if ($this->Article->save($article)) {
                 $this->Flash->success(__('The article has been updated.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/articles");
             }
             $this->Flash->error(__('Unable to edit article.'));
         }
@@ -102,7 +102,7 @@ class ArticlesController extends AppController {
         $article = $this->Article->get($id);
         if ($this->Article->delete($article)) {
             $this->Flash->success(__('The article with id: {0} has been deleted.', h($id)));
-            return $this->redirect(['action' => 'admin']);
+            return $this->redirect("".Configure::read('BASE_URL')."/admin/articles");
         }
     }
 

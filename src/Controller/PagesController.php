@@ -59,7 +59,7 @@ class PagesController extends AppController {
             $page->slug = strtolower(Inflector::slug($page->title));
             if ($this->Page->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/pages");
             }
             $this->Flash->error(__('Unable to add page.'));
         }
@@ -80,7 +80,7 @@ class PagesController extends AppController {
             $page->slug = strtolower(Inflector::slug($page->title));
             if ($this->Page->save($page)) {
                 $this->Flash->success(__('The page has been updated.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/pages");
             }
             $this->Flash->error(__('Unable to edit page.'));
         }
@@ -93,7 +93,7 @@ class PagesController extends AppController {
         $page = $this->Page->get($id);
         if ($this->Page->delete($page)) {
             $this->Flash->success(__('The page with id: {0} has been deleted.', h($id)));
-            return $this->redirect(['action' => 'admin']);
+            return $this->redirect("".Configure::read('BASE_URL')."/admin/pages");
         }
     }
 	
