@@ -44,7 +44,7 @@ if (!empty($metakeywords)) {
         <nav id="nav">
         <?php
         $nav_array = array();
-        foreach ($navigation as $nav_item) {
+        foreach ($main_navigation as $nav_item) {
             $nav_array[] = array('id' => $nav_item->id, 'parent_id' => $nav_item->parent_id, 'url' => $nav_item->url, 'target' => $nav_item->target, 'title' => $nav_item->title, 'position' => $nav_item->position);
         }
 		$tree = prepareList($nav_array);
@@ -55,7 +55,7 @@ if (!empty($metakeywords)) {
         <ul><li><a href="#">&equiv;</a>
     	<ul>
         <?php
-		foreach($navigation as $nav_item): ?>
+		foreach($main_navigation as $nav_item): ?>
 		<li><a href="<?php echo eval("?>".$nav_item->url."");?>"<?php if(!empty($nav_item->target)) { echo ' target="'.$nav_item->target.'"'; } ?>><?php echo $nav_item->title;?></a></li>
 		<?php endforeach;
 		?>
@@ -100,7 +100,7 @@ if (!empty($metakeywords)) {
         <aside id="sidebar">
         <div id="sidebar_padding">
         <?php
-		foreach($sidebar as $sidebar_item):
+		foreach($main_sidebar as $sidebar_item):
 			echo '<div class="sidebar_item">';
 			echo '<h2>'.$sidebar_item->title.'</h2>';
             echo eval('?>' .$sidebar_item->body. '<?php ');

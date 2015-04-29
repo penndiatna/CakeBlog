@@ -65,10 +65,10 @@ class AppController extends Controller
         $this->Auth->allow('load_pages', 'home', 'article_view', 'rss', 'categories', 'contact', 'captcha_image');
 
         $this->loadModel('Navigation');
-        $this->set('navigation', $navigation = $this->Navigation->find('all', array('order' => 'position ASC')));
+        $this->set('main_navigation', $main_navigation = $this->Navigation->find('all', array('order' => 'position ASC')));
 
         $this->loadModel('Sidebar');
-        $this->set('sidebar', $sidebar = $this->Sidebar->find('all', array('order' => 'position ASC')));
+        $this->set('main_sidebar', $main_sidebar = $this->Sidebar->find('all', array('order' => 'position ASC')));
 
         $this->loadModel('Categories');
         $this->set('sidebar_categories', $sidebar_categories = $this->Categories->find('all', array('order' => 'title ASC')));
