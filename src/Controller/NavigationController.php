@@ -40,7 +40,7 @@ class NavigationController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Navigation->save($navigation)) {
                 $this->Flash->success(__('The navigation item has been saved.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/navigation");
             }
             $this->Flash->error(__('Unable to add navigation item.'));
         }
@@ -64,7 +64,7 @@ class NavigationController extends AppController {
             $this->Navigation->patchEntity($navigation, $this->request->data);
             if ($this->Navigation->save($navigation)) {
                 $this->Flash->success(__('The navigation item has been updated.'));
-                return $this->redirect(['action' => 'admin']);
+                return $this->redirect("".Configure::read('BASE_URL')."/admin/navigation");
             }
             $this->Flash->error(__('Unable to edit navigation item.'));
         }
@@ -77,7 +77,7 @@ class NavigationController extends AppController {
         $navigation = $this->Navigation->get($id);
         if ($this->Navigation->delete($navigation)) {
             $this->Flash->success(__('The navigation item with id: {0} has been deleted.', h($id)));
-            return $this->redirect(['action' => 'admin']);
+            return $this->redirect("".Configure::read('BASE_URL')."/admin/navigation");
         }
     }
 	

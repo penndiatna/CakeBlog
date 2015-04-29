@@ -33,7 +33,7 @@ class ContactController extends AppController {
                     ->send($this->request->data['message']);
 
                     $this->Flash->success(__('Your message has been submitted'));
-                    return $this->redirect(['action' => 'index']);
+                return $this->redirect("".Configure::read('BASE_URL')."/contact");
             }
         }
         //RENDER THEME VIEW
