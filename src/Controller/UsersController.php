@@ -51,7 +51,7 @@ class UsersController extends AppController
 
     public function login()
     {
-        $this->layout = 'default';
+        $this->layout = Configure::read('cakeblog_theme');
         $this->set('title_for_layout', 'Login');
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
